@@ -33,8 +33,9 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
                 '.shoppingCartItemQuantity'
             );
             elementQuantity.value++;
-            //$('.toast').toast('show');
+            ('.toast').toast('show');
             updateShoppingCartTotal();
+            localStorage.setItem(key, JSON.stringify(items));
             return;
         }
     }

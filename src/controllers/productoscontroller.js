@@ -6,10 +6,17 @@ controller.lis = (req, res) => {
             if (err) {
                 res.json(err);
             }
+            conn.query('SELECT id,name FROM category order by name desc', (err, category) => {
+                if (err) {
+                    res.json(err);
+                }
 
-            res.render('home', {
-                data: productos
+                res.render('home', {
+                    data: productos,
+                    category: category
+                });
             });
+
         });
     })
 };
